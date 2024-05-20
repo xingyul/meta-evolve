@@ -1,0 +1,503 @@
+<mujoco model="ADROIT-hammer(v1.5)">
+    <compiler angle="radian" meshdir="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/meshes" texturedir="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures" />
+    <default class="main">
+        <mesh scale="0.001 0.001 0.001" />
+        <joint armature="0.001" damping="0.05" frictionloss="0.001" limited="true" margin="0.01" />
+        <geom friction="1 0.5 0.01" margin="0.0005" />
+        <site rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+        <tendon limited="true" />
+        <general ctrllimited="true" ctrlrange="-1 1" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <default class="board">
+        <mesh scale="1 1 1" />
+        <joint armature="0" damping="0" frictionloss="0" limited="false" margin="0" />
+        <geom friction="1 0.005 0.0001" margin="0" material="MatWood" type="box" />
+        <site rgba="0.5 0.5 0.5 1" size="0.005 0.005 0.005" />
+        <tendon limited="false" />
+        <general ctrllimited="false" ctrlrange="0 0" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <default class="D_Touch">
+        <site group="4" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />
+        <general user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <default class="DC_Hand">
+        <geom conaffinity="0" group="4" material="MatColl" />
+        <general user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <default class="D_Vizual">
+        <geom conaffinity="0" contype="0" group="1" material="MatViz" type="mesh" />
+        <general user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <default class="free">
+        <joint armature="0" damping="0" limited="false" type="free" />
+        <general user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+    </default>
+    <asset>
+        <texture builtin="flat" height="762" mark="cross" name="texgeom" rgb1="0.3 0.6 0.5" rgb2="0.3 0.6 0.5" type="cube" width="127" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/wood.png" name="wood" type="cube" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/wood.png" name="wood2d" type="2d" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/square.png" name="square" type="cube" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/silverRaw.png" name="foil" type="cube" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/woodb.png" name="woodb" type="cube" />
+        <texture builtin="checker" height="100" name="groundplane" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" type="2d" width="100" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/marble.png" name="marble2d" type="2d" />
+        <texture file="/home/xyl/Projects/differentiable-imitation/human_hand_robot/dependencies/Adroit/resources/textures/marble.png" name="marblecube" type="cube" />
+        <material name="MatColl" reflectance="0.5" rgba="0.4 0.5 0.6 1" shininess="0.3" specular="1" />
+        <material name="MatViz" reflectance="0.5" rgba="0.9 0.7 0.5 1" shininess="0.1" specular="0.75" />
+        <material name="MatGnd" reflectance="0.3" rgba="0.5 0.55 0.5 1" shininess="0.3" specular="0.3" />
+        <material name="object" texture="texgeom" />
+        <material name="groundplane" texrepeat="10 10" texture="groundplane" />
+        <material name="table2d" reflectance="0.3" rgba="0.8 0.8 0.8 1" texture="marble2d" />
+        <material name="tablecube" rgba="0.8 0.8 0.8 1" texture="marblecube" />
+        <material name="MatFoil" rgba="0.9 0.9 0.9 1" shininess="0.3" specular="1" texture="foil" />
+        <material name="MatPlane" rgba="0.3 0.3 0.2 1" shininess="0.3" specular="0.3" />
+        <material name="MatWood" shininess="0.1" specular="0.4" texrepeat="3 3" texture="wood" />
+        <material name="MatSquare" rgba="0.8 0.8 0.8 1" shininess="0.6" specular="1" texture="square" />
+        <material name="MatWoodR" rgba="1 0.5 0.5 1" shininess="0.3" specular="1" texture="wood" />
+        <material name="MatWoodG" rgba="0.2 1 0.2 1" shininess="0.3" specular="1" texture="wood" />
+        <material name="MatWoodB" shininess="0.3" specular="1" texture="woodb" />
+        <mesh file="meshes/forearm_simple.stl" name="forearm_simple" scale="1 1 1" />
+        <mesh file="meshes/wrist.stl" name="wrist" />
+        <mesh file="meshes/palm.stl" name="palm" />
+        <mesh file="meshes/lfmetacarpal.stl" name="lfmetacarpal" />
+        <mesh file="meshes/knuckle.stl" name="knuckle" />
+        <mesh file="meshes/F3.stl" name="F3" />
+        <mesh file="meshes/F2.stl" name="F2" />
+        <mesh file="meshes/F1.stl" name="F1" />
+        <mesh file="meshes/TH3_z.stl" name="TH3_z" />
+        <mesh file="meshes/TH2_z.stl" name="TH2_z" />
+        <mesh file="meshes/TH1_z.stl" name="TH1_z" />
+    </asset>
+    <worldbody>
+        <body name="forearm" pos="0 -0.7 0.2" quat="0.000563312 -0.000562864 0.706825 0.707388">
+            <inertial diaginertia="0.01 0.01 0.0075" mass="4" pos="0.001 -0.002 0.29" quat="0.982037 -0.0160006 0 -0.188007" />
+            <joint axis="1 0 0" damping="20" name="ARRx" pos="0 0 0" range="-0.4 0.25" />
+            <joint axis="0 1 0" damping="20" name="ARRy" pos="0 0 0" range="-0.3 0.3" />
+            <geom class="DC_Hand" name="C_forearm1" pos="0 0 0.29" rgba="0.4 0.5 0.6 0.1" size="0.05 0.033" type="capsule" />
+            <geom class="D_Vizual" name="V_forearm1" pos="0 0 0.29" size="0.05 0.033" type="capsule" />
+            <body name="wrist" pos="0 0 0.396">
+                <inertial diaginertia="0.001 0.001 0.001" mass="0.3" pos="0.003 0 0.016" quat="0.504234 0.49623 0.49523 0.504234" />
+                <joint armature="0.005" axis="0 1 0" damping="0.5" name="WRJ1" pos="0 0 0" range="-0.524 0.175" user="1123" />
+                <geom class="DC_Hand" name="C_wrist" quat="0.707107 0.707107 0 0" rgba="0.4 0.5 0.6 0.1" size="0.015 0.01" type="capsule" />
+                <geom class="D_Vizual" name="V_wrist" quat="0.707107 0.707107 0 0" size="0.015 0.01" type="capsule" />
+                <body name="palm" pos="0 0 0.034">
+                    <inertial diaginertia="0.001 0.001 0.001" mass="0.3" pos="0.006 0 0.036" quat="0.715833 0.0439898 0.0749825 0.692839" />
+                    <joint armature="0.005" axis="1 0 0" damping="0.5" name="WRJ0" pos="0 0 0" range="-0.785 0.611" user="1122" />
+                    <geom class="DC_Hand" name="C_palm0" pos="0.011 0 0.038" rgba="0.4 0.5 0.6 0.1" size="0.032 0.0111 0.049" type="box" />
+                    <geom class="D_Vizual" name="V_palm0" pos="0.011 0 0.038" size="0.032 0.0111 0.049" type="box" />
+                    <geom class="D_Vizual" name="V_palm1" pos="-0.032 0 0.014" size="0.011 0.0111 0.025" type="box" />
+                    <geom class="DC_Hand" name="C_palm1" pos="-0.032 0 0.014" rgba="0.4 0.5 0.6 0.1" size="0.011 0.0111 0.025" type="box" />
+                    <site name="S_grasp" pos="0.007 -0.05 0.07" quat="0.00863043 -0.595202 -0.00337281 -0.803523" rgba="0 0 0 0" size="0.01" />
+                    <site class="D_Touch" name="Tch_ffmetacarpal" pos="0.033 -0.008 0.078" size="0.009 0.004 0.006" />
+                    <site class="D_Touch" name="Tch_mfmetacarpal" pos="0.011 -0.008 0.074" size="0.009 0.004 0.014" />
+                    <site class="D_Touch" name="Tch_rfmetacarpal" pos="-0.011 -0.008 0.068" size="0.009 0.004 0.016" />
+                    <site class="D_Touch" name="Tch_thmetacarpal" pos="0.006 -0.008 0.042" quat="0.959662 0 0.281157 0" size="0.008 0.004 0.015" />
+                    <site class="D_Touch" name="Tch_palm" pos="-0.017 -0.008 0.024" quat="0.877583 0 -0.479426 0" size="0.012 0.004 0.016" />
+                    <body name="ffknuckle" pos="0.033 0.0 0.095">
+                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.008" pos="0 0 0" quat="0.520062 0.854102 0.00600072 -0.00300036" />
+                        <joint axis="0 1 0" name="FFJ3" pos="0 0 0" range="-0.436 0.436" user="1103" />
+                        <body name="ffproximal" pos="0 0 0">
+                            <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.014" pos="0 0 0.023" quat="0.707095 -0.00400054 0.00400054 0.707095" />
+                            <joint axis="1 0 0" name="FFJ2" pos="0 0 0" range="0.0 1.571" user="1102" />
+                            <geom class="DC_Hand" name="C_ffproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <geom class="D_Vizual" name="V_ffproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <site class="D_Touch" name="Tch_ffproximal" pos="0 -0.007 0.022" size="0.009 0.004 0.012" />
+                            <body name="ffmiddle" pos="0 0 0.045">
+                                <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.012" pos="0 0 0.011" quat="0.707107 0 0 0.707107" />
+                                <joint axis="1 0 0" name="FFJ1" pos="0 0 0" range="0.0 1.571" user="1101" />
+                                <geom class="DC_Hand" name="C_ffmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <geom class="D_Vizual" name="V_ffmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <site class="D_Touch" name="Tch_ffmiddle" pos="0 -0.007 0.013" size="0.009 0.002 0.007" />
+                                <body name="ffdistal" pos="0 0 0.025">
+                                    <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.01" pos="0 0 0.015" quat="0.7071 -0.00300043 0.00300043 0.7071" />
+                                    <joint axis="1 0 0" name="FFJ0" pos="0 0 0" range="0.0 1.571" user="1100" />
+                                    <geom class="DC_Hand" condim="4" name="C_ffdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <geom class="D_Vizual" condim="4" name="V_ffdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <site group="3" name="S_fftip" pos="0 0 0.026" />
+                                    <site class="D_Touch" name="Tch_fftip" pos="0 -0.004 0.018" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="mfknuckle" pos="0.011 0 0.099">
+                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.008" pos="0 0 0" quat="0.520062 0.854102 0.00600072 -0.00300036" />
+                        <joint axis="0 1 0" name="MFJ3" pos="0 0 0" range="-0.436 0.436" user="1107" />
+                        <body name="mfproximal" pos="0 0 0">
+                            <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.014" pos="0 0 0.023" quat="0.707095 -0.00400054 0.00400054 0.707095" />
+                            <joint axis="1 0 0" name="MFJ2" pos="0 0 0.0" range="0 1.571" user="1106" />
+                            <geom class="DC_Hand" name="C_mfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <geom class="D_Vizual" name="V_mfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <site class="D_Touch" name="Tch_mfproximal" pos="0 -0.007 0.022" size="0.009 0.004 0.012" />
+                            <body name="mfmiddle" pos="0 0 0.045">
+                                <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.012" pos="0 0 0.012" quat="0.707107 0 0 0.707107" />
+                                <joint axis="1 0 0" name="MFJ1" pos="0 0 0.0" range="0 1.571" user="1105" />
+                                <geom class="DC_Hand" name="C_mfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <geom class="D_Vizual" name="V_mfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <site class="D_Touch" name="Tch_mfmiddle" pos="0 -0.007 0.013" size="0.009 0.002 0.007" />
+                                <body name="mfdistal" pos="0 0 0.025">
+                                    <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.01" pos="0 0 0.015" quat="0.7071 -0.00300043 0.00300043 0.7071" />
+                                    <joint axis="1 0 0" name="MFJ0" pos="0 0 0.0" range="0 1.571" user="1104" />
+                                    <geom class="DC_Hand" condim="4" name="C_mfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <geom class="D_Vizual" condim="4" name="V_mfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <site group="3" name="S_mftip" pos="0 0 0.026" />
+                                    <site class="D_Touch" name="Tch_mftip" pos="0 -0.004 0.018" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="rfknuckle" pos="-0.011 0 0.095">
+                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.008" pos="0 0 0" quat="0.520062 0.854102 0.00600072 -0.00300036" />
+                        <joint axis="0 1 0" name="RFJ3" pos="0 0 0" range="-0.436 0.436" user="1111" />
+                        <body name="rfproximal" pos="0 0 0">
+                            <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.014" pos="0 0 0.023" quat="0.707095 -0.00400054 0.00400054 0.707095" />
+                            <joint axis="1 0 0" name="RFJ2" pos="0 0 0.0" range="0 1.571" user="1110" />
+                            <geom class="DC_Hand" name="C_rfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <geom class="D_Vizual" name="V_rfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                            <site class="D_Touch" name="Tch_rfproximal" pos="0 -0.007 0.022" size="0.009 0.004 0.012" />
+                            <body name="rfmiddle" pos="0 0 0.045">
+                                <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.012" pos="0 0 0.012" quat="0.707107 0 0 0.707107" />
+                                <joint axis="1 0 0" name="RFJ1" pos="0 0 0.0" range="0 1.571" user="1109" />
+                                <geom class="DC_Hand" name="C_rfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <geom class="D_Vizual" name="V_rfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                <site class="D_Touch" name="Tch_rfmiddle" pos="0 -0.007 0.013" size="0.009 0.002 0.007" />
+                                <body name="rfdistal" pos="0 0 0.025">
+                                    <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.01" pos="0 0 0.015" quat="0.7071 -0.00300043 0.00300043 0.7071" />
+                                    <joint axis="1 0 0" name="RFJ0" pos="0 0 0.0" range="0 1.571" user="1108" />
+                                    <geom class="DC_Hand" condim="4" name="C_rfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <geom class="D_Vizual" condim="4" name="V_rfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                    <site group="3" name="S_rftip" pos="0 0 0.026" />
+                                    <site class="D_Touch" name="Tch_rftip" pos="0 -0.004 0.018" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="lfmetacarpal" pos="-0.017 0 0.044">
+                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.075" pos="-0.014 0.001 0.014" quat="0.709167 -0.0920216 -0.0630148 0.696164" />
+                        <joint axis="0.570977 0 0.820966" name="LFJ4" pos="0 0 0" range="0.0 0.698" user="1116" />
+                        <geom class="DC_Hand" name="C_lfmetacarpal" pos="-0.0165 0 0.01" rgba="0.4 0.5 0.6 0.2" size="0.0095 0.0111 0.025" type="box" />
+                        <geom class="D_Vizual" name="V_lfmetacarpal" pos="-0.0165 0 0.01" size="0.0095 0.0111 0.025" type="box" />
+                        <site class="D_Touch" name="Tch_lfmetacarpal" pos="-0.016 -0.008 0.017" size="0.009 0.004 0.014" />
+                        <body name="lfknuckle" pos="-0.017 0 0.044">
+                            <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.008" pos="0 0 0" quat="0.520062 0.854102 0.00600072 -0.00300036" />
+                            <joint axis="0 1 0" name="LFJ3" pos="0 0 0" range="-0.436 0.436" user="1115" />
+                            <body name="lfproximal" pos="0 0 0">
+                                <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.014" pos="0 0 0.023" quat="0.707095 -0.00400054 0.00400054 0.707095" />
+                                <joint axis="1 0 0" name="LFJ2" pos="0 0 0.0" range="0 1.571" user="1114" />
+                                <geom class="DC_Hand" name="C_lfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                                <geom class="D_Vizual" name="V_lfproximal" pos="0 0 0.0225" size="0.01 0.0225" type="capsule" />
+                                <site class="D_Touch" name="Tch_lfproximal" pos="0 -0.007 0.022" size="0.009 0.004 0.012" />
+                                <body name="lfmiddle" pos="0 0 0.045">
+                                    <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.012" pos="0 0 0.012" quat="0.707107 0 0 0.707107" />
+                                    <joint axis="1 0 0" name="LFJ1" pos="0 0 0.0" range="0 1.571" user="1113" />
+                                    <geom class="DC_Hand" name="C_lfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                    <geom class="D_Vizual" name="V_lfmiddle" pos="0 0 0.0125" size="0.00805 0.0125" type="capsule" />
+                                    <site class="D_Touch" name="Tch_lfmiddle" pos="0 -0.007 0.013" size="0.009 0.002 0.007" />
+                                    <body name="lfdistal" pos="0 0 0.025">
+                                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.01" pos="0 0 0.015" quat="0.7071 -0.00300043 0.00300043 0.7071" />
+                                        <joint axis="1 0 0" name="LFJ0" pos="0 0 0.0" range="0 1.571" user="1112" />
+                                        <geom class="DC_Hand" condim="4" name="C_lfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                        <geom class="D_Vizual" condim="4" name="V_lfdistal" pos="0 0 0.012" size="0.00705 0.012" type="capsule" />
+                                        <site group="3" name="S_lftip" pos="0 0 0.026" />
+                                        <site class="D_Touch" name="Tch_lftip" pos="0 -0.004 0.018" />
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="thbase" pos="0.034 -0.009 0.029" quat="0.9239559191829652 0.0 0.38249896654339055 0.0">
+                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.01" pos="0 0 0" />
+                        <joint axis="0 0 -1" name="THJ4" pos="0 0 0" range="-1.047 1.047" user="1121" />
+                        <body name="thproximal" pos="0 0 0">
+                            <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.016" pos="0 0 0.017" quat="0.981604 0 0.000999597 0.190923" />
+                            <joint axis="1 0 0" name="THJ3" pos="0 0 0" range="0.0 1.309" user="1120" />
+                            <geom class="DC_Hand" name="C_thproximal" pos="0 0 0.019" rgba="0.4 0.5 0.6 0.1" size="0.013 0.019" type="capsule" />
+                            <geom class="D_Vizual" name="V_thproximal" pos="0 0 0.019" size="0.013 0.019" type="capsule" />
+                            <site class="D_Touch" name="Tch_thproximal" pos="-0.008 0 0.022" size="0.005 0.011 0.011" />
+                            <body name="thhub" pos="0 0 0.038">
+                                <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.002" pos="0 0 0" />
+                                <joint axis="1 0 0" name="THJ2" pos="0 0 0" range="-0.262 0.262" user="1119" />
+                                <body name="thmiddle" pos="0 0 0">
+                                    <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.016" pos="0 0 0.016" quat="0.999971 -0.000999971 -0.00699979 0.00299991" />
+                                    <joint axis="0 1 0" name="THJ1" pos="0 0 0" range="-0.524 0.524" user="1118" />
+                                    <geom class="DC_Hand" name="C_thmiddle" pos="0 0 0.016" size="0.011 0.016" type="capsule" />
+                                    <geom class="D_Vizual" name="V_thmiddle" pos="0 0 0.016" size="0.011 0.016" type="capsule" />
+                                    <site class="D_Touch" name="Tch_thmiddle" pos="-0.008 0 0.018" size="0.005 0.011 0.011" />
+                                    <body name="thdistal" pos="0 0 0.032">
+                                        <inertial diaginertia="1e-05 1e-05 1e-05" mass="0.016" pos="0 0 0.016" quat="0.99887 -0.00499935 -0.0469939 0.00499935" />
+                                        <joint axis="0 1 0" name="THJ0" pos="0 0 0" range="-1.571 0.0" user="1117" />
+                                        <geom class="DC_Hand" condim="4" name="C_thdistal" pos="0 0 0.013" size="0.00918 0.013" type="capsule" />
+                                        <geom class="D_Vizual" condim="4" name="V_thdistal" pos="0 0 0.013" size="0.00918 0.013" type="capsule" />
+                                        <site group="3" name="S_thtip" pos="0 0 0.0275" />
+                                        <site class="D_Touch" name="Tch_thtip" pos="-0.005 0 0.02" size="0.005 0.011 0.016" />
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <contact>
+        <pair condim="1" geom1="C_palm0" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_ffproximal" geom2="C_mfproximal" />
+        <pair condim="1" geom1="C_ffproximal" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_ffmiddle" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_ffdistal" geom2="C_mfdistal" />
+        <pair condim="1" geom1="C_ffdistal" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_mfproximal" geom2="C_rfproximal" />
+        <pair condim="1" geom1="C_mfproximal" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_mfdistal" geom2="C_rfdistal" />
+        <pair condim="1" geom1="C_mfdistal" geom2="C_lfdistal" />
+        <pair condim="1" geom1="C_mfdistal" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_rfproximal" geom2="C_lfproximal" />
+        <pair condim="1" geom1="C_rfmiddle" geom2="C_lfmiddle" />
+        <pair condim="1" geom1="C_rfmiddle" geom2="C_lfdistal" />
+        <pair condim="1" geom1="C_rfdistal" geom2="C_lfmiddle" />
+        <pair condim="1" geom1="C_rfdistal" geom2="C_lfdistal" />
+        <pair condim="1" geom1="C_rfdistal" geom2="C_lfdistal" />
+        <pair condim="1" geom1="C_rfdistal" geom2="C_thdistal" />
+        <pair condim="1" geom1="C_lfdistal" geom2="C_thdistal" />
+    </contact>
+    <tendon>
+        <fixed name="T_WRJ1r" range="-0.032 0.032" user="1236">
+            <joint coef="0.018" joint="WRJ1" />
+        </fixed>
+        <fixed name="T_WRJ1l" range="-0.032 0.032" user="1237">
+            <joint coef="-0.018" joint="WRJ1" />
+        </fixed>
+        <fixed name="T_WRJ0u" range="-0.032 0.032" user="1236">
+            <joint coef="0.018" joint="WRJ0" />
+        </fixed>
+        <fixed name="T_WRJ0d" range="-0.032 0.032" user="1237">
+            <joint coef="-0.018" joint="WRJ0" />
+        </fixed>
+        <fixed name="T_FFJ3r" range="-0.018 0.018" user="1204">
+            <joint coef="0.01" joint="FFJ3" />
+        </fixed>
+        <fixed name="T_FFJ3l" range="-0.018 0.018" user="1205">
+            <joint coef="-0.01" joint="FFJ3" />
+        </fixed>
+        <fixed name="T_FFJ2u" range="-0.007 0.03" user="1202">
+            <joint coef="0.01" joint="FFJ2" />
+        </fixed>
+        <fixed name="T_FFJ2d" range="-0.03 0.007" user="1203">
+            <joint coef="-0.01" joint="FFJ2" />
+        </fixed>
+        <fixed name="T_FFJ1c" range="-0.001 0.001">
+            <joint coef="0.00705" joint="FFJ0" />
+            <joint coef="-0.00805" joint="FFJ1" />
+        </fixed>
+        <fixed name="T_FFJ1u" range="-0.007 0.03" user="1200">
+            <joint coef="0.00705" joint="FFJ0" />
+            <joint coef="0.00805" joint="FFJ1" />
+        </fixed>
+        <fixed name="T_FFJ1d" range="-0.03 0.007" user="1201">
+            <joint coef="-0.00705" joint="FFJ0" />
+            <joint coef="-0.00805" joint="FFJ1" />
+        </fixed>
+        <fixed name="T_MFJ3r" range="-0.018 0.018" user="1210">
+            <joint coef="0.01" joint="MFJ3" />
+        </fixed>
+        <fixed name="T_MFJ3l" range="-0.018 0.018" user="1211">
+            <joint coef="-0.01" joint="MFJ3" />
+        </fixed>
+        <fixed name="T_MFJ2u" range="-0.007 0.03" user="1208">
+            <joint coef="0.01" joint="MFJ2" />
+        </fixed>
+        <fixed name="T_MFJ2d" range="-0.03 0.007" user="1209">
+            <joint coef="-0.01" joint="MFJ2" />
+        </fixed>
+        <fixed name="T_MFJ1c" range="-0.001 0.001">
+            <joint coef="0.00705" joint="MFJ0" />
+            <joint coef="-0.00805" joint="MFJ1" />
+        </fixed>
+        <fixed name="T_MFJ1u" range="-0.007 0.03" user="1206">
+            <joint coef="0.00705" joint="MFJ0" />
+            <joint coef="0.00805" joint="MFJ1" />
+        </fixed>
+        <fixed name="T_MFJ1d" range="-0.03 0.007" user="1207">
+            <joint coef="-0.00705" joint="MFJ0" />
+            <joint coef="-0.00805" joint="MFJ1" />
+        </fixed>
+        <fixed name="T_RFJ3r" range="-0.018 0.018" user="1216">
+            <joint coef="0.01" joint="RFJ3" />
+        </fixed>
+        <fixed name="T_RFJ3l" range="-0.018 0.018" user="1217">
+            <joint coef="-0.01" joint="RFJ3" />
+        </fixed>
+        <fixed name="T_RFJ2u" range="-0.007 0.03" user="1214">
+            <joint coef="0.01" joint="RFJ2" />
+        </fixed>
+        <fixed name="T_RFJ2d" range="-0.03 0.007" user="1215">
+            <joint coef="-0.01" joint="RFJ2" />
+        </fixed>
+        <fixed name="T_RFJ1c" range="-0.001 0.001">
+            <joint coef="0.00705" joint="RFJ0" />
+            <joint coef="-0.00805" joint="RFJ1" />
+        </fixed>
+        <fixed name="T_RFJ1u" range="-0.007 0.03" user="1212">
+            <joint coef="0.00705" joint="RFJ0" />
+            <joint coef="0.00805" joint="RFJ1" />
+        </fixed>
+        <fixed name="T_RFJ1d" range="-0.03 0.007" user="1213">
+            <joint coef="-0.00705" joint="RFJ0" />
+            <joint coef="-0.00805" joint="RFJ1" />
+        </fixed>
+        <fixed name="T_LFJ4u" range="-0.007 0.03" user="1224">
+            <joint coef="0.01" joint="LFJ4" />
+        </fixed>
+        <fixed name="T_LFJ4d" range="-0.03 0.007" user="1225">
+            <joint coef="-0.01" joint="LFJ4" />
+        </fixed>
+        <fixed name="T_LFJ3r" range="-0.018 0.018" user="1222">
+            <joint coef="0.01" joint="LFJ3" />
+        </fixed>
+        <fixed name="T_LFJ3l" range="-0.018 0.018" user="1223">
+            <joint coef="-0.01" joint="LFJ3" />
+        </fixed>
+        <fixed name="T_LFJ2u" range="-0.007 0.03" user="1220">
+            <joint coef="0.01" joint="LFJ2" />
+        </fixed>
+        <fixed name="T_LFJ2d" range="-0.03 0.007" user="1221">
+            <joint coef="-0.01" joint="LFJ2" />
+        </fixed>
+        <fixed name="T_LFJ1c" range="-0.001 0.001">
+            <joint coef="0.00705" joint="LFJ0" />
+            <joint coef="-0.00805" joint="LFJ1" />
+        </fixed>
+        <fixed name="T_LFJ1u" range="-0.007 0.03" user="1218">
+            <joint coef="0.00705" joint="LFJ0" />
+            <joint coef="0.00805" joint="LFJ1" />
+        </fixed>
+        <fixed name="T_LFJ1d" range="-0.03 0.007" user="1219">
+            <joint coef="-0.00705" joint="LFJ0" />
+            <joint coef="-0.00805" joint="LFJ1" />
+        </fixed>
+        <fixed name="T_THJ4a" range="-0.018 0.018" user="1234">
+            <joint coef="0.01636" joint="THJ4" />
+        </fixed>
+        <fixed name="T_THJ4c" range="-0.018 0.018" user="1235">
+            <joint coef="-0.01636" joint="THJ4" />
+        </fixed>
+        <fixed name="T_THJ3u" range="-0.007 0.03" user="1232">
+            <joint coef="0.01" joint="THJ3" />
+        </fixed>
+        <fixed name="T_THJ3d" range="-0.03 0.007" user="1233">
+            <joint coef="-0.01" joint="THJ3" />
+        </fixed>
+        <fixed name="T_THJ2u" range="-0.018 0.018" user="1230">
+            <joint coef="0.011" joint="THJ2" />
+        </fixed>
+        <fixed name="T_THJ2d" range="-0.018 0.018" user="1231">
+            <joint coef="-0.011" joint="THJ2" />
+        </fixed>
+        <fixed name="T_THJ1r" range="-0.018 0.018" user="1228">
+            <joint coef="0.011" joint="THJ1" />
+        </fixed>
+        <fixed name="T_THJ1l" range="-0.018 0.018" user="1229">
+            <joint coef="-0.011" joint="THJ1" />
+        </fixed>
+        <fixed name="T_THJ0r" range="-0.03 0.007" user="1226">
+            <joint coef="0.009" joint="THJ0" />
+        </fixed>
+        <fixed name="T_THJ0l" range="-0.007 0.03" user="1227">
+            <joint coef="-0.009" joint="THJ0" />
+        </fixed>
+    </tendon>
+    <actuator>
+        <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.4 0.25" gainprm="500 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="1002 0 2001 -0.02 0.02 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.3 0.3" gainprm="500 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" />
+        <general biasprm="0 -10 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.524 0.175" gainprm="10 0 0 0 0 0 0 0 0 0" joint="WRJ1" name="A_WRJ1" user="1002 0 2001 -0.02 0.02 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -10 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.79 0.61" gainprm="10 0 0 0 0 0 0 0 0 0" joint="WRJ0" name="A_WRJ0" user="1002 0 2001 -0.02 0.02 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.44 0.44" joint="FFJ3" name="A_FFJ3" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0.0 1.6" joint="FFJ2" name="A_FFJ2" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="FFJ1" name="A_FFJ1" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="FFJ0" name="A_FFJ0" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.44 0.44" joint="MFJ3" name="A_MFJ3" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="MFJ2" name="A_MFJ2" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="MFJ1" name="A_MFJ1" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="MFJ0" name="A_MFJ0" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.44 0.44" joint="RFJ3" name="A_RFJ3" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="RFJ2" name="A_RFJ2" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="RFJ1" name="A_RFJ1" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="RFJ0" name="A_RFJ0" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 0.7" joint="LFJ4" name="A_LFJ4" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.44 0.44" joint="LFJ3" name="A_LFJ3" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="LFJ2" name="A_LFJ2" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="LFJ1" name="A_LFJ1" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0 1.6" joint="LFJ0" name="A_LFJ0" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" joint="THJ4" name="A_THJ4" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="0.0 1.3" joint="THJ3" name="A_THJ3" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.26 0.26" joint="THJ2" name="A_THJ2" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-0.52 0.52" joint="THJ1" name="A_THJ1" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+        <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrlrange="-1.571 0" joint="THJ0" name="A_THJ0" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+    </actuator>
+    <sensor>
+        <actuatorfrc actuator="A_WRJ1" name="Saf_A_WRJ1" />
+        <actuatorfrc actuator="A_WRJ0" name="Saf_A_WRJ0" />
+        <actuatorfrc actuator="A_FFJ3" name="Saf_A_FFJ3" />
+        <actuatorfrc actuator="A_FFJ2" name="Saf_A_FFJ2" />
+        <actuatorfrc actuator="A_FFJ1" name="Saf_A_FFJ1" />
+        <actuatorfrc actuator="A_MFJ3" name="Saf_A_MFJ3" />
+        <actuatorfrc actuator="A_MFJ2" name="Saf_A_MFJ2" />
+        <actuatorfrc actuator="A_MFJ1" name="Saf_A_MFJ1" />
+        <actuatorfrc actuator="A_RFJ3" name="Saf_A_RFJ3" />
+        <actuatorfrc actuator="A_RFJ2" name="Saf_A_RFJ2" />
+        <actuatorfrc actuator="A_RFJ1" name="Saf_A_RFJ1" />
+        <actuatorfrc actuator="A_LFJ4" name="Saf_A_LFJ4" />
+        <actuatorfrc actuator="A_LFJ3" name="Saf_A_LFJ3" />
+        <actuatorfrc actuator="A_LFJ2" name="Saf_A_LFJ2" />
+        <actuatorfrc actuator="A_LFJ1" name="Saf_A_LFJ1" />
+        <actuatorfrc actuator="A_THJ4" name="Saf_A_THJ4" />
+        <actuatorfrc actuator="A_THJ3" name="Saf_A_THJ3" />
+        <actuatorfrc actuator="A_THJ2" name="Saf_A_THJ2" />
+        <actuatorfrc actuator="A_THJ1" name="Saf_A_THJ1" />
+        <actuatorfrc actuator="A_THJ0" name="Saf_A_THJ0" />
+        <touch name="ST_Tch_fftip" site="Tch_fftip" />
+        <touch name="ST_Tch_mftip" site="Tch_mftip" />
+        <touch name="ST_Tch_rftip" site="Tch_rftip" />
+        <touch name="ST_Tch_lftip" site="Tch_lftip" />
+        <touch name="ST_Tch_thtip" site="Tch_thtip" />
+        <touch name="ST_Tch_ffmiddle" site="Tch_ffmiddle" />
+        <touch name="ST_Tch_mfmiddle" site="Tch_mfmiddle" />
+        <touch name="ST_Tch_rfmiddle" site="Tch_rfmiddle" />
+        <touch name="ST_Tch_lfmiddle" site="Tch_lfmiddle" />
+        <touch name="ST_Tch_thmiddle" site="Tch_thmiddle" />
+        <touch name="ST_Tch_ffproximal" site="Tch_ffproximal" />
+        <touch name="ST_Tch_mfproximal" site="Tch_mfproximal" />
+        <touch name="ST_Tch_rfproximal" site="Tch_rfproximal" />
+        <touch name="ST_Tch_lfproximal" site="Tch_lfproximal" />
+        <touch name="ST_Tch_thproximal" site="Tch_thproximal" />
+        <touch name="ST_Tch_ffmetacarpal" site="Tch_ffmetacarpal" />
+        <touch name="ST_Tch_mfmetacarpal" site="Tch_mfmetacarpal" />
+        <touch name="ST_Tch_rfmetacarpal" site="Tch_rfmetacarpal" />
+        <touch name="ST_Tch_lfmetacarpal" site="Tch_lfmetacarpal" />
+        <touch name="ST_Tch_thmetacarpal" site="Tch_thmetacarpal" />
+        <touch name="ST_Tch_palm" site="Tch_palm" />
+        <jointpos joint="WRJ1" name="Sjp_WRJ1" />
+        <jointpos joint="WRJ0" name="Sjp_WRJ0" />
+        <jointpos joint="FFJ3" name="Sjp_FFJ3" />
+        <jointpos joint="FFJ2" name="Sjp_FFJ2" />
+        <jointpos joint="FFJ1" name="Sjp_FFJ1" />
+        <jointpos joint="FFJ0" name="Sjp_FFJ0" />
+        <jointpos joint="MFJ3" name="Sjp_MFJ3" />
+        <jointpos joint="MFJ2" name="Sjp_MFJ2" />
+        <jointpos joint="MFJ1" name="Sjp_MFJ1" />
+        <jointpos joint="MFJ0" name="Sjp_MFJ0" />
+        <jointpos joint="RFJ3" name="Sjp_RFJ3" />
+        <jointpos joint="RFJ2" name="Sjp_RFJ2" />
+        <jointpos joint="RFJ1" name="Sjp_RFJ1" />
+        <jointpos joint="RFJ0" name="Sjp_RFJ0" />
+        <jointpos joint="LFJ4" name="Sjp_LFJ4" />
+        <jointpos joint="LFJ3" name="Sjp_LFJ3" />
+        <jointpos joint="LFJ2" name="Sjp_LFJ2" />
+        <jointpos joint="LFJ1" name="Sjp_LFJ1" />
+        <jointpos joint="LFJ0" name="Sjp_LFJ0" />
+        <jointpos joint="THJ4" name="Sjp_THJ4" />
+        <jointpos joint="THJ3" name="Sjp_THJ3" />
+        <jointpos joint="THJ2" name="Sjp_THJ2" />
+        <jointpos joint="THJ1" name="Sjp_THJ1" />
+        <jointpos joint="THJ0" name="Sjp_THJ0" />
+    </sensor>
+</mujoco>

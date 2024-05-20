@@ -1,0 +1,13 @@
+<mujoco>
+    <worldbody>
+        <body name="ycb_body_7" pos="-0.0511325 -0.069513 0.035" quat="0.64891 0.703117 0.0209332 -0.290007" >
+            <inertial pos="0 0 0" mass="0.02" diaginertia="0.001 0.001 0.001" />
+            <joint name="ycb_joint_7" pos="0 0 0" type="free" damping="0" />
+            <geom name="ycb_geom_7_0" type="box" size="0.035 0.042 0.0175" condim="4" group="1" friction="1 0.5 0.01" solref="0.002 1" solimp="0.998 0.998 0.001 0.5 2" rgba="0.538232 0.448989 0.428388 0.2" euler="0 0 -1.11" />
+        </body>
+        <body name="ycb_body_7_target" pos="0.0795472 -0.100187 0.419694" quat="-0.458867 -0.0467913 -0.0624732 0.88507">
+            <inertial pos="0.0838493 -0.0918658 0.419694" quat="-0.458867 -0.0467913 -0.0624732 0.88507" mass="0" diaginertia="0 0 0" />
+            <geom name="ycb_geom_7_0_target" type="box" size="0.04368594363 0.05376447966 0.0168923381" contype="0" conaffinity="0" condim="4" group="1" friction="1 0.5 0.01" solref="0.002 1" solimp="0.998 0.998 0.001 0.5 2" rgba="0 1 0 0.125" euler="0 0 -1.11" />
+        </body>
+    </worldbody>
+</mujoco>
