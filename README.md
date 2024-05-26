@@ -11,7 +11,7 @@ Created by <a href="http://xingyul.github.io">Xingyu Liu</a>, <a href="https://w
 ### Citation
 If you find our work useful in your research, please cite:
 
-        @inproceedings{liu:2022:meta:evolve,
+        @inproceedings{liu:2024:meta:evolve,
           title={Meta-Evolve: Continuous Robot Evolution for One-to-many Policy Transfer},
           author={Liu, Xingyu and Pathak, Deepak and Zhao, Ding},
           booktitle={International Conference on Learning Representations (ICLR)},
