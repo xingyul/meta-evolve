@@ -49,7 +49,6 @@ azimuth = 225
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 ycb_scene_dir = os.path.join(current_dir, ycb_scene_name)
-current_curri_t = 0
 
 round_idx_file = os.path.join(log_dir, 'iterations', 'round_' + round_idx + '.txt')
 
