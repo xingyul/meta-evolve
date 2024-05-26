@@ -26,6 +26,13 @@ preview = 0
 preview = 1
 
 generalized_env = 'generalized-ycb-v2-unified'
+robot_name = 'steiner_1'
+robot_name = 'original'
+robot_name = 'steiner_2'
+robot_name = 'iiwa'
+robot_name = 'kinova'
+robot_name = 'jaco'
+
 
 policy_file = 'log_expert_008_pudding_box_20200918_114346/iterations/policy_0000.pickle'
 ycb_scene_dir='/home/xyl/Projects/meta-evolve/dex_ycb/008_pudding_box_20200918_114346'
@@ -457,7 +464,7 @@ with open('hand_manipulation_suite/phys_param_vector_all.json', 'w') as f:
 with open('hand_manipulation_suite/interp_params_dict_l1.json', 'r') as f:
     tree_interp_param_dict = json.load(f)
 
-interp_param_vector = tree_interp_param_dict['steiner_1']
+interp_param_vector = tree_interp_param_dict[robot_name]
 # interp_param_vector = tree_interp_param_dict['steiner_2']
 # interp_param_vector = tree_interp_param_dict['original']
 # interp_param_vector = tree_interp_param_dict['iiwa']
