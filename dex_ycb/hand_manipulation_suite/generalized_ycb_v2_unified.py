@@ -436,20 +436,6 @@ class GeneralizedYCBEnvV2Unified(mujoco_env.MujocoEnv, utils.EzPickle):
         robosuite_env.model.root.append(tendon)
         ##### get the position joints tendon
 
-        ##### get visible mode
-        '''
-        worldbody = mjcf_utils.find_elements(robosuite_env.model.root, \
-                tags='worldbody')
-        if self.simulation_mode:
-            geoms = [e for e in worldbody.iter() if (e.tag =='geom')]
-            for geom in geoms:
-                if 'type' in geom.attrib:
-                    if geom.attrib['type'] == 'mesh':
-                        geom_parent = mjcf_utils.find_parent( \
-                                robosuite_env.model.root, geom)
-                        geom_parent.remove(geom)
-        '''
-
         ##### prevent contact penetrating and harden joint limit
         geoms = [e for e in robosuite_env.model.root.iter() if (e.tag =='geom')]
         geoms = [g for g in geoms if 'name' in g.attrib]
