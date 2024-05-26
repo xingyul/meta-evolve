@@ -10,15 +10,15 @@ We provide the expert policies trained from on the source robot in [log\_door-v0
 
 The definition of the MuJoCo robot models of the source and target robot are in `make_generalized_envs.py`.
 The instantiation of robot instances is shown in `test_env.py`.
-To visualize the models and expert policies, please change the values of `target_robot`, `generalized_env` and `policy_file` variables in `test_env.py`.
+To visualize the robot models and expert policies, please change the values of `target_robot`, `generalized_env` and `policy_file` variables in `test_env.py`.
 
 ### Launch Meta-Evolve
 
-The command scripts for launching Meta-Evolve are the `command_train_evolve_tree.sh` files. 
+The command script for launching Meta-Evolve is the `command_train_evolve_tree.sh` file. 
 
 Change `generalized_env` variable in the script for different tasks. For example, setting `generalized_env` to be `generalized-hammer-v0` will launch Meta-Evolve on hammer task.
 
-Change `exp` variable in the script for different types of evolution strategy. For example, setting `exp` to be `herd` will launch vanilla HERD, `geom_med` will launch Meta-Evolve with only one meta robot, and `steiner` Steiner Tree version of Meta-Evolve.
+Change `exp` variable in the script for different types of evolution strategy. For example, setting `exp` to be `herd` will launch vanilla HERD, `geom_med` will launch Meta-Evolve with only one meta robot, and `steiner` will launch Steiner Tree version of Meta-Evolve.
 
 ### Visualize Trained Policies
 
